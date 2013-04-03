@@ -1,0 +1,21 @@
+{
+    "name": "Twitter Names",
+    "version": "0.1",
+    "manifest_version": 2,
+    "content_scripts": [
+    {
+      "matches": ["http://twitter.com/*", "https://twitter.com/*"],
+      "js": ["jquery.js", "customscript.js"]
+    }
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "permissions": [
+        "webRequest", "webRequestBlocking", "tabs", "http://twitter.com/*", "https://twitter.com/*"
+    ],
+    "browser_action": {
+        "default_title": "Twitter Names"
+    },
+    "options_page": "options.html"
+}

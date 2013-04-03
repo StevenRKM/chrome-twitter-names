@@ -1,0 +1,88 @@
+<html>
+<head>
+    <title>Settings</title>
+    <style>
+        body {
+            background: #C0DEED;
+            font: 400 100% "Open Sans",Helvetica,Arial,Verdana,sans-serif;
+            padding: 0;
+        }
+        .wrapper {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .inner-wrapper {
+            background-color: white;
+            padding: 20px;
+        }
+        #names_mapping {
+            width: 100%;
+            background: #eee 95% center no-repeat;
+            border: none;
+            color: #555;
+        }
+        h1 {
+            color: white;
+            background-color: #00a0d1;
+            vertical-align: middle;
+            zoom: 1;
+            font-size: 1.125em;
+            line-height: normal;
+            padding: 8px 20px;
+            margin-bottom: 0px;
+            text-decoration: none;
+        }
+        p {
+            margin-top: 0px;
+        }
+        #save {
+            background: #6ac339;
+            border: none;
+            color: #fff;
+            font-weight: 800;
+            padding: 8px 20px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: block;
+            cursor: pointer;
+        }
+        #save:hover {
+            background: #5faf33;
+        }
+        #save span {
+            vertical-align: middle;
+        }
+        #status {
+            background: #6ac339;
+            border: none;
+            color: #fff;
+            font-weight: 800;
+            padding: 8px 20px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <h1>Twitter Names</h1>
+
+    <div class="inner-wrapper">
+        <p>Each new line represents a conversion from initials to the full name. The format per line needs to be "<b>INITIALS => Full Name</b>".</p>
+
+        <textarea id="names_mapping" rows="10" placeholder="*JD => John Doe
+                                                        *JD => Jane Doe"></textarea>
+
+        <a id="save"><span>Save Settings</span></a>
+
+        <div id="status">Saved</div>
+    </div>
+</div>
+
+<script type="text/javascript" src="options.js"></script>
+</body>
+</html>
