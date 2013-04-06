@@ -1,10 +1,11 @@
 {
     "name": "Twitter Names",
+    "description": "Chrome extension to transform initials in tweets to full names",
     "version": "0.1",
     "manifest_version": 2,
     "content_scripts": [
     {
-      "matches": ["http://twitter.com/*", "https://twitter.com/*"],
+      "matches": ["*://twitter.com/*"],
       "js": ["jquery.js", "customscript.js"]
     }
     ],
@@ -12,10 +13,7 @@
         "scripts": ["background.js"]
     },
     "permissions": [
-        "webRequest", "webRequestBlocking", "tabs", "http://twitter.com/*", "https://twitter.com/*"
+        "webRequest", "tabs", "*://twitter.com/*"
     ],
-    "browser_action": {
-        "default_title": "Twitter Names"
-    },
     "options_page": "options.html"
 }

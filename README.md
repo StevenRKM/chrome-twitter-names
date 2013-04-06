@@ -1,4 +1,4 @@
-chrome-twitter-names
-====================
+Twitter Names
+=============
 
-Chrome extension to transform initials to full names
+Chrome extension to transform initials in tweets to full names.
