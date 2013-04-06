@@ -1,5 +1,5 @@
 {
-    "name": "Twitter Names",
+    "name": "Twitter Initials",
     "description": "Chrome extension to transform initials in tweets to full names",
     "version": "0.1",
     "manifest_version": 2,
