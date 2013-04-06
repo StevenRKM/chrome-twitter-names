@@ -59,7 +59,7 @@ function process_tweets() {
             for(var i in initials_mapping) {
                 if(tweet.find(".js-tweet-text").text().indexOf(initials_mapping[i].initials) != -1) {
                     tweet.find(".js-tweet-text").html(
-                        tweet.find(".js-tweet-text").html().replace(initials_mapping[i].initials, "<span style='color:blue'>"+initials_mapping[i].name+"</span>")
+                        tweet.find(".js-tweet-text").html().replace(initials_mapping[i].initials, "<span style='color:#00a0d1;font-weight:800'>"+initials_mapping[i].name+"</span>")
                     );
                     break;
                 }
