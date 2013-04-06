@@ -9,7 +9,7 @@ chrome.extension.onMessage.addListener(
     function(request, sender, sendResponse) {
 
         if(request.action == "load_settings" ) {
-            sendResponse(localStorage["settings_names_mapping"]);
+            sendResponse(localStorage["settings_names_mapping"] || "");
         }
 
 });

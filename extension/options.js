@@ -16,9 +16,7 @@ function save_options() {
 
 // Restores select box state to saved value from localStorage.
 function restore_options() {
-    var storage = localStorage["settings_names_mapping"];
-    if(storage!=undefined && storage!="undefined")
-        document.getElementById("names_mapping").value =  storage;
+    document.getElementById("names_mapping").value = localStorage["settings_names_mapping"] || "";
 }
 
 restore_options();
