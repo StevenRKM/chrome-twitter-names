@@ -1,16 +1,24 @@
 chrome.extension.onMessage.addListener(
     function(request, sender, sendResponse) {
+        console.log("received action "+request.action);
 
         if(request.action == "new_tweets") {
-            process_tweets();
-        } else if(request.action == "settings") {
-            //process_tweets();
-            console.log("check settings");
+            processTweets();
         }
 
 });
 	
 function sendMessage(message, callback) {
+    console.log("send action "+message.action);
+
+    if(callback == undefined)
+        callback = function(response) {
+            if(response!=undefined) {
+                console.log("response on action "+message.action);
+                console.log(response);
+            }
+        };
+
 	chrome.extension.sendMessage(message, callback);
 }
 
@@ -38,19 +46,16 @@ $(document).ready( function() {
 
         // make sure tweets are only processed after settings are loaded
         loaded = true;
-        process_tweets();
+        processTweets();
     });
 
 });
 
-function process_tweets() {
+function processTweets() {
     if(!loaded)
         return;
 
     var tweets = $(".stream-items .js-stream-tweet:not(.checked)");
-
-//    if(tweets.length == 0)
-//        return;
 
 	tweets.each(
 		function(index, el) {
