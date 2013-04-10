@@ -33,3 +33,53 @@ function sendMessage(id, message, callback) {
 
   chrome.tabs.sendMessage(id, message, callback);
 }
+
+function setDefaultOptions() {
+    localStorage["settings_names_mapping"] =
+        "*AB => Magnilde\n"+
+            "*AL => Borgny\n"+
+            "*AV => Woglinda\n"+
+            "*BS => Halfrid\n"+
+            "*BW => Geirmund\n"+
+            "*CJ => Hakon\n"+
+            "*DA => Andras\n"+
+            "*DG => Thorlak\n"+
+            "*DL => Skipp\n"+
+            "*DS => Oda\n"+
+            "*GM => Odd\n"+
+            "*HS => Nidhug\n"+
+            "*JF => Yrar\n"+
+            "*JW => Svein\n"+
+            "*KD => Saehild\n"+
+            "*KDM => Frida\n"+
+            "*LL => Skuld\n"+
+            "*MG => Thrain\n"+
+            "*NT => Magne\n"+
+            "*RD => Otkel\n"+
+            "*RR => Kveld\n"+
+            "*SB => Hrolleif\n"+
+            "*SC => Mildri\n"+
+            "*SO => Ull\n"+
+            "*SR => Asgrim\n"+
+            "*TT => Alfdis\n"+
+            "*VJ => Einar";
+}
+
+// on install
+chrome.runtime.onInstalled.addListener(function(details) {
+
+    // check options on install
+    if(details.reason == "install") {
+        setDefaultOptions();
+    }
+
+    // also open browser on example page
+    if(details.reason == "install" || details.reason == "update") {
+        chrome.tabs.create({'url': "http://twitter.com/mobilevikingsBE"}, function(tab) {})
+    }
+});
+
+// check options on each run
+if(localStorage["settings_names_mapping"]==undefined) {
+    setDefaultOptions();
+}
