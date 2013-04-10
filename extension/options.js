@@ -1,6 +1,6 @@
 
 // Saves options to localStorage.
-function save_options() {
+function saveOptions() {
     localStorage["settings_names_mapping"] = document.getElementById("names_mapping").value;
 
     // Update status to let user know options were saved.
@@ -14,10 +14,10 @@ function save_options() {
     //chrome.extension.sendRequest({action: "restart"});
 }
 
-// Restores select box state to saved value from localStorage.
-function restore_options() {
+// Load options from localStorage
+function loadOptions() {
     document.getElementById("names_mapping").value = localStorage["settings_names_mapping"] || "";
 }
 
-restore_options();
-document.querySelector('#save').addEventListener('click', save_options);
+loadOptions();
+document.querySelector('#save').addEventListener('click', saveOptions);
