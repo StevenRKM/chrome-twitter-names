@@ -1,7 +1,7 @@
 {
     "name": "Twitter Initials",
     "description": "Chrome extension to transform initials in tweets to full names",
-    "version": "0.1",
+    "version": "0.1.2",
     "manifest_version": 2,
     "content_scripts": [
     {

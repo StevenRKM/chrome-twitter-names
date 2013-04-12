@@ -54,6 +54,7 @@ function setDefaultOptions() {
             "*KDM => Frida\n"+
             "*LL => Skuld\n"+
             "*MG => Thrain\n"+
+            "*ML => Joreid\n"+
             "*NT => Magne\n"+
             "*RD => Otkel\n"+
             "*RR => Kveld\n"+
@@ -67,6 +68,7 @@ function setDefaultOptions() {
 
 // on install
 chrome.runtime.onInstalled.addListener(function(details) {
+    console.log("reason "+details.reason);
 
     // check options on install
     if(details.reason == "install") {
